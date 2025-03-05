@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yahya's Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #29b3c0;
+        }
+        header {
+            background-color: #000000;
+            color: #2f00ff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #000000;
+        }
+        nav a {
+            color: #2b0ee4;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        nav a:hover {
+            background-color: #182e30;
+        }
+        main {
+            padding: 20px;
+        }
+        footer {
+            background-color: #000000;
+            color: #0041f4;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .product-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .product-image {
+            max-width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .product-image:hover {
+            transform: scale(1.1);
+        }
+
+        .product-gallery {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .animated {
+            animation: fadeIn 1s ease-in;
+        }
+        .contact-btn {
+            position: fixed;
+            bottom: 70px;
+            right: 20px;
+            background-color: #4285f4;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.3s ease;
+            z-index: 1000;
+        }
+
+        .contact-btn:hover {
+            transform: scale(1.1);
+            background-color: #3367d6;
+        }
+
+        .contact-btn img {
+            width: 24px;
+            height: 24px;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .contact-btn {
+            animation: bounce 2s infinite;
+        }
+
+        .slider-container {
+            max-width: 800px;
+            position: relative;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+        }
+
+        .slider-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .slider-btn {
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .slider-btn:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Yahya's Website</h1>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+    </nav>
+
+    <main>
+        <section id="home">
+            <h2 class="animated">Home</h2>
+            <div class="product-container animated">
+                <div class="slider-container">
+                    <div class="slider">
+                        <div class="slide">
+                            <img src="https://tr.rbxcdn.com/180DAY-214a96ad45b05efa788ef737495a2bd4/420/420/Shirt/Webp/noFilter" alt="Cool Roblox Shirt" class="product-image">
+                        </div>
+                        <div class="slide">
+                            <img src="https://tr.rbxcdn.com/30DAY-Avatar-9D216E45C1122A7B7D60992CE7F9EF64-Png/352/352/Avatar/Webp/noFilter" alt="Roblox Avatar" class="product-image">
+                        </div>
+                    </div>
+                    <div class="slider-buttons">
+                        <button class="slider-btn" onclick="prevSlide()">←</button>
+                        <button class="slider-btn" onclick="nextSlide()">→</button>
+                    </div>
+                </div>
+                <p>Welcome to Yahya's website. Discover the latest digital trends and exclusive collections.</p>
+                <p>Check out our <a href="https://www.roblox.com/catalog/103454974062337/Cool-shirt" target="_blank">Cool Shirt</a> on Roblox!</p>
+                <p>Join our community and stay updated with the latest news and releases. Follow us on social media and be part of the conversation.</p>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2 class="animated">About</h2>
+            <div class="product-container animated">
+                <p>If you want me to make more avatar items for you guys on roblox, then support me by buying this Cool Shirt.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer
+        <p>© 2025 Yahya's Website</p>
+    </footer>
+
+    <a href="mailto:mohammadyahya1715@gmail.com" class="contact-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white">
+            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+        </svg>
+        Email Us
+    </a>
+
+    <script>
+        let currentSlide = 0;
+        const slider = document.querySelector('.slider');
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function updateSlider() {
+            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlider();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateSlider();
+        }
+
+        setInterval(nextSlide, 2000);
+    </script>
+</body>
+</html>
